@@ -15,6 +15,9 @@
 
 
         <module>shopping_generator_code</module>
+        <module>shopping_common</module>
+        <module>sshopping_goods_service</module>
+        <module>shopping_manager_api</module>
     </modules>
 
     <properties>

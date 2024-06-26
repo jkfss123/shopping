@@ -1,0 +1,27 @@
+server:
+  port: 8001
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+  level:
+    org.apache.dubbo: DEBUG
+
+spring:
+  application:
+    name: shopping_manager_api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.44.135:8848
+
+dubbo:
+  application:
+    name: shopping_manager_api
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://192.168.44.135:8848
+
