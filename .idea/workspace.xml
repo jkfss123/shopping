@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81d1b2f-63fd-4c49-940d-45ebf0614cf7" name="更改" comment="第二次提交">
-      <change afterPath="$PROJECT_DIR$/shopping_generator_code/src/test/java/org/example/GeneratorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping_generator_code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping_generator_code/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping_generator_code/src/main/java/org/example/App.java" beforeDir="false" />
-    </list>
+    <list default="true" id="f81d1b2f-63fd-4c49-940d-45ebf0614cf7" name="更改" comment="根据id查询" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,18 +42,41 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/apache-maven-3.9.0-bin/project/lingshi_cloud2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b2fe440cb7a0b127f1a90ffea296313b",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "spring.configuration.checksum": "d432977c771440f038263982f97fe7d8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\apache-maven-3.9.0-bin\project\shopping\shopping_common\src\main\java\com\lingshi\common" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lingshi.shopping_manager_api" />
+      <recent name="com.lingshi.common.service" />
+      <recent name="shopping_goods_service.mapper" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -65,7 +84,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ShoppingGoodsServiceApplication">
     <configuration name="GeneratorCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.GeneratorCode" />
       <module name="shopping_generator_code" />
@@ -79,8 +98,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShoppingGoodsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shopping_goods_service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshi.ShoppingGoodsServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingshi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoppingManagerApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shopping_manager_api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshi.ShoppingManagerApiApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingshi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ShoppingGoodsServiceApplication" />
+      <item itemvalue="Spring Boot.ShoppingManagerApiApplication" />
+      <item itemvalue="应用程序.GeneratorCode" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ShoppingManagerApiApplication" />
+        <item itemvalue="Spring Boot.ShoppingGoodsServiceApplication" />
         <item itemvalue="应用程序.GeneratorCode" />
       </list>
     </recent_temporary>
@@ -94,7 +146,13 @@
       <option name="presentableId" value="Default" />
       <updated>1719385228597</updated>
       <workItem from="1719385229943" duration="1834000" />
-      <workItem from="1719390525141" duration="1598000" />
+      <workItem from="1719390525141" duration="3876000" />
+      <workItem from="1719410773142" duration="5738000" />
+      <workItem from="1719457137956" duration="7597000" />
+      <workItem from="1719541972944" duration="4844000" />
+      <workItem from="1719581876522" duration="2862000" />
+      <workItem from="1719584768007" duration="628000" />
+      <workItem from="1719585412290" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交">
       <created>1719390778057</created>
@@ -110,7 +168,28 @@
       <option name="project" value="LOCAL" />
       <updated>1719390937403</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="第三次提交">
+      <created>1719392290873</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719392290873</updated>
+    </task>
+    <task id="LOCAL-00004" summary="第三次提交">
+      <created>1719584605487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719584605487</updated>
+    </task>
+    <task id="LOCAL-00005" summary="第三次提交">
+      <created>1719584652385</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719584652385</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +208,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第二次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第二次提交" />
+    <MESSAGE value="id查询" />
+    <MESSAGE value="根据id查询" />
+    <MESSAGE value="第三次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三次提交" />
   </component>
 </project>
