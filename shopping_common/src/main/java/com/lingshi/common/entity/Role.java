@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -32,4 +33,9 @@ public class Role implements Serializable {
 
     @TableField("roleDesc")
     private String roleDesc;
+    /**
+     *
+     */
+    @TableField(exist = false)
+    private List<Permission> permissions;
 }

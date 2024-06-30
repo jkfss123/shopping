@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -32,4 +33,10 @@ public class Admin implements Serializable {
 
     @TableField("password")
     private String password;
+
+    /**
+     * exist=false 不是数据库字段，在mybatisplus在操作忽略
+     */
+    @TableField(exist = false)
+    private List<Role> roles;
 }

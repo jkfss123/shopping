@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingshi.shopping_admin_service.mapper.AdminMapper">
+
+<!--    手动映射结果集-->
+<resultMap id="adminMapper" type="com.lingshi.common.entity.Admin">
+    <id property="aid" column="aid"/>
+    <result property="username" column="username"/>
+<!--    <result property="password" column="password"/>-->
+    <collection property="roles" ofType="com.lingshi.common.entity.Role">
+        <id property="rid" column="rid"/>
+        <result property="roleName" column="roleName"/>
+        <result property="roleDesc" column="roleDesc"/>
+        <collection property="permissions" ofType="com.lingshi.common.entity.Permission">
+            <id property="pid" column="pid"/>
+            <result property="permissionName" column="permissionName"/>
+            <result property="url" column="url"/>
+        </collection>
+    </collection>
+
+</resultMap>
+
+    <select id="findById" resultMap="adminMapper">
+
+        SELECT * FROM t_admin
+                          LEFT JOIN t_admin_role ON t_admin.aid=t_admin_role.aid
+                          LEFT JOIN t_role ON t_role.rid = t_admin_role.rid
+                          LEFT JOIN t_role_permission ON t_admin_role.rid = t_role_permission.rid
+                          LEFT JOIN t_permission ON t_role_permission.pid=t_permission.pid
+        WHERE t_admin.aid=#{aid}
+    </select>
+
+</mapper>
+
+
+<!--        {-->
+<!--        "code": 200,-->
+<!--        "msg": null,-->
+<!--        "data": {-->
+<!--        "aid": 32,-->
+<!--        "username": "jinken",-->
+<!--        "password": null,-->
+<!--        "roles": [-->
+<!--        {-->
+<!--        "rid": 1,-->
+<!--        "roleName": "超级管理员",-->
+<!--        "roleDesc": "管理整个系统",-->
+<!--        "permissions": [-->
+<!--        {-->
+<!--        "pid": 1,-->
+<!--        "permissionName": "查询管理员列表",-->
+<!--        "url": "/admin/search"-->
+<!--        },-->
+<!--        {-->
+<!--        "pid": 2,-->
+<!--        "permissionName": "查询广告",-->
+<!--        "url": "/category/findById"-->
+<!--        },-->
+<!--        {-->
+<!--        "pid": 3,-->
+<!--        "permissionName": "查询商品",-->
+<!--        "url": "/goods/search"-->
+<!--        }-->
+<!--        ]-->
+<!--        },-->
+<!--        {-->
+<!--        "rid": 2,-->
+<!--        "roleName": "内容管理员",-->
+<!--        "roleDesc": "管理网站内容",-->
+<!--        "permissions": [-->
+<!--        {-->
+<!--        "pid": 2,-->
+<!--        "permissionName": "查询广告",-->
+<!--        "url": "/category/findById"-->
+<!--        },-->
+<!--        {-->
+<!--        "pid": 3,-->
+<!--        "permissionName": "查询商品",-->
+<!--        "url": "/goods/search"-->
+<!--        }-->
+<!--        ]-->
+<!--        },-->
+<!--        {-->
+<!--        "rid": 3,-->
+<!--        "roleName": "商品管理员",-->
+<!--        "roleDesc": "管理商品",-->
+<!--        "permissions": [-->
+<!--        {-->
+<!--        "pid": 3,-->
+<!--        "permissionName": "查询商品",-->
+<!--        "url": "/goods/search"-->
+<!--        }-->
+<!--        ]-->
+<!--        },-->
+<!--        {-->
+<!--        "rid": 4,-->
+<!--        "roleName": "角色管理员",-->
+<!--        "roleDesc": "角色管理员",-->
+<!--        "permissions": [-->
+<!--        {-->
+<!--        "pid": 4,-->
+<!--        "permissionName": "查询角色列表",-->
+<!--        "url": "/role/search"-->
+<!--        }-->
+<!--        ]-->
+<!--        }-->
+<!--        ]-->
+<!--        }-->
+<!--        }-->
