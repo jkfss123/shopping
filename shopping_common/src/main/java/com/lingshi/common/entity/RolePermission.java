@@ -22,9 +22,8 @@ public class RolePermission implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("rid")
+
     private Long rid;
 
-    @TableId("pid")
     private Long pid;
 }

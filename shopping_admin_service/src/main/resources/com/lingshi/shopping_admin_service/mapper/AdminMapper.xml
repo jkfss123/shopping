@@ -29,6 +29,14 @@
                           LEFT JOIN t_permission ON t_role_permission.pid=t_permission.pid
         WHERE t_admin.aid=#{aid}
     </select>
+    <select id="findAllPermission" resultType="com.lingshi.common.entity.Permission">
+        SELECT t_admin.username,t_permission.* FROM t_admin
+                                                        LEFT JOIN t_admin_role ON t_admin.aid=t_admin_role.aid
+                                                        LEFT JOIN t_role ON t_role.rid = t_admin_role.rid
+                                                        LEFT JOIN t_role_permission ON t_admin_role.rid = t_role_permission.rid
+                                                        LEFT JOIN t_permission ON t_role_permission.pid=t_permission.pid
+        WHERE t_admin.username = #{username}
+    </select>
 
 </mapper>
 

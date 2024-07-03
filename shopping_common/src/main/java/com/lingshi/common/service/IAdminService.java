@@ -2,6 +2,7 @@ package com.lingshi.common.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lingshi.common.entity.Admin;
+import com.lingshi.common.entity.Permission;
 
 import java.util.List;
 
@@ -49,4 +50,18 @@ public interface IAdminService {
      * @param rid 角色集合
      */
     void updateRoleAdmin(Long aid,Long[] rid);
+
+    /**
+     * 根据账号查询管理员基本信息
+     * @param username
+     * @return
+     */
+    Admin findByAdminName(String username);
+
+    /**
+     * 根据账号查询所有权限信息
+     * @param username
+     * @return
+     */
+    List<Permission> findAllPermission(String username);
 }

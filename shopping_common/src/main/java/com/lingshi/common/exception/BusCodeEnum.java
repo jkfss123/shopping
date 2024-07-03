@@ -19,7 +19,10 @@ public enum BusCodeEnum {
     //系统异常
     SYSTEM_ERROR(500,"系统异常"),
     //参数异常
-    PARAMETER_ERROR(501,"请求参数异常");
+    PARAMETER_ERROR(1001,"请求参数异常"),
+    DELETE_PERMISSION_ERROR(1002,"当前权限还有角色在使用，不能删除"),
+    LOGIN_ERROR(1003,"账号密码异常，请重新输入"),
+    NOT_LOGIN_ERROR(1004,"未登陆");
     private Integer code;
     private String message;
 

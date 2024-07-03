@@ -1,5 +1,6 @@
 package com.lingshi.shopping_manager_api.controller;
 
+import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.lingshi.common.entity.Brand;
 import com.lingshi.common.result.BaseResult;
 import com.lingshi.common.service.IBrandService;
@@ -25,6 +26,7 @@ public class BrandController {
 
 
     @GetMapping("/findById")
+    @SaCheckPermission("/brand/findById")
     public BaseResult findById(Long id){
         Brand brand = brandService.findById(id);
         return BaseResult.success(brand);
