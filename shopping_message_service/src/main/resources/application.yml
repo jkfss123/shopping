@@ -1,0 +1,30 @@
+# 端口号
+server:
+  port: 9007
+
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+spring:
+  application:
+    name: shopping_message_service #服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.44.100:8848 # 注册中心地址
+dubbo:
+  application:
+    name: shopping_message_service # 项目名
+    serialize-check-status: DISABLE
+    check-serializable: false
+  protocol:
+    name: dubbo # 通讯协议
+    port: -1 # 端口号，-1表示自动扫描可用端口。
+  registry:
+    address: nacos://192.168.44.100:8848 # 注册中心
+
+

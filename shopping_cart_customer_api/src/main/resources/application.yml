@@ -1,0 +1,31 @@
+# 端口号
+server:
+  port: 8005
+
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+# Nacos
+spring:
+  application:
+    name: shopping_cart_customer_api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.44.100:8848
+
+
+dubbo:
+  application:
+    #项目名字
+    name: shopping_cart_customer_api
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    # 注册地址
+    address: nacos://192.168.44.100:8848

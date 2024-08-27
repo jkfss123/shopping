@@ -1,0 +1,28 @@
+package com.lingshi.shopping_common.entity;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author jkl
+ * @since 2024-06-26
+ */
+@Getter
+@Setter
+@TableName("t_role_permission")
+public class RolePermission implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+
+    private Long rid;
+
+    private Long pid;
+}

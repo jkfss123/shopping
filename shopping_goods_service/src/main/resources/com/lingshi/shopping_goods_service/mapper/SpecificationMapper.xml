@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingshi.shopping_goods_service.mapper.SpecificationMapper">
+
+    <resultMap id="specMap" type="com.lingshi.shopping_common.entity.Specification">
+        <id property="id" column="specId"/>
+        <result property="specName" column="specName"/>
+        <result property="productTypeId" column="productTypeId"/>
+
+        <collection property="specificationOptions" ofType="com.lingshi.shopping_common.entity.SpecificationOption">
+            <id property="id" column="optionId"/>
+            <result property="optionName" column="optionName"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="findById" resultType="com.lingshi.shopping_common.entity.Specification">
+        SELECT
+            t_specification_option.id optionId,
+            t_specification_option.specId,
+            t_specification.productTypeId,
+            t_specification.specName,
+            t_specification_option.optionName
+        FROM t_specification
+                 LEFT JOIN t_specification_option ON t_specification.id = t_specification_option.specId
+        WHERE t_specification.id = #{id}
+    </select>
+    <select id="findByProuctTypeId" resultMap="specMap">
+        SELECT
+            t_specification_option.id optionId,
+            t_specification_option.specId,
+            t_specification.productTypeId,
+            t_specification.specName,
+            t_specification_option.optionName
+        FROM t_specification
+                 LEFT JOIN t_specification_option ON t_specification.id = t_specification_option.specId
+                 LEFT JOIN t_product_type ON t_specification.productTypeId = t_product_type.id
+        WHERE t_product_type.id = #{prouctTypeId}
+    </select>
+</mapper>

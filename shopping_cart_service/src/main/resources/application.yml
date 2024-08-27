@@ -1,0 +1,42 @@
+# 端口号
+server:
+  port: 9009
+
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+spring:
+  application:
+    name: shopping_cart_service #服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.44.100:8848 # 注册中心地址
+  # redis
+  data:
+    redis:
+      host: 192.168.44.134
+      port: 6379
+      timeout: 30000
+      jedis:
+        pool:
+          max-idle: 8
+          max-wait: -1
+          max-active: 8
+          min-idle: 0
+
+
+dubbo:
+  application:
+    name: shopping_cart_service #服务名
+    serialize-check-status: DISABLE
+    check-serializable: false
+  protocol:
+    name: dubbo # 通讯协议
+    port: -1 # 端口号，-1表示自动扫描可用端口。
+  registry:
+    address: nacos://192.168.44.100:8848 # 注册中心

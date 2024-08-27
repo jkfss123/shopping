@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingshi.shopping_order_service.mapper.OrdersMapper">
+
+    <resultMap id="ordersMapper" type="com.lingshi.shopping_common.entity.Orders">
+        <id property="id" column="id"></id>
+        <result property="payment" column="payment"></result>
+        <result property="paymentType" column="paymentType"></result>
+        <result property="postFee" column="postFee"></result>
+        <result property="status" column="status"></result>
+        <result property="createTime" column="createTime"></result>
+        <result property="paymentTime" column="paymentTime"></result>
+        <result property="consignTime" column="consignTime"></result>
+        <result property="endTime" column="endTime"></result>
+        <result property="closeTime" column="closeTime"></result>
+        <result property="shippingName" column="shippingName"></result>
+        <result property="shippingCode" column="shippingCode"></result>
+        <result property="userId" column="userId"></result>
+        <result property="buyerMessage" column="buyerMessage"></result>
+        <result property="buyerNick" column="buyerNick"></result>
+        <result property="receiverAreaName" column="receiverAreaName"></result>
+        <result property="receiverMobile" column="receiverMobile"></result>
+        <result property="receiverZipCode" column="receiverZipCode"></result>
+        <result property="receiver" column="receiver"></result>
+        <result property="expire" column="expire"></result>
+        <collection property="cartGoods" column="orderId" ofType="com.lingshi.shopping_common.entity.CartGoods">
+            <result property="goodId" column="goodId"></result>
+            <result property="goodsName" column="goodsName"></result>
+            <result property="price" column="price"></result>
+            <result property="headerPic" column="headerPic"></result>
+            <result property="num" column="num"></result>
+            <result property="orderId" column="orderId"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="findById" parameterType="string" resultMap="ordersMapper">
+        SELECT *
+        FROM t_orders
+                 LEFT JOIN t_cart_goods
+                           ON t_orders.id = t_cart_goods.orderId
+        WHERE t_orders.id = #{id}
+    </select>
+    <select id="findUserOrdersByStatus" resultMap="ordersMapper">
+        SELECT *
+        FROM t_orders
+        LEFT JOIN t_cart_goods ON t_cart_goods.orderId = t_orders.id
+        /* */
+        <where>
+            WHERE t_orders.userId = #{userId}
+            <if test="status !=null">
+                and t_order.status = #{status}
+            </if>
+        </where>
+
+    </select>
+</mapper>

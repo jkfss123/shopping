@@ -1,0 +1,60 @@
+# 端口号
+server:
+  port: 9011
+
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+#配置mybatis-plus
+mybatis-plus:
+  global-config:
+    db-config:
+      # 表名前缀
+      table-prefix: bz_
+      # 主键生成策略为自增
+      id-type: auto
+  configuration:
+    # 关闭列名自动驼峰命名规则映射
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+
+
+spring:
+  application:
+    name: shopping_pay_service #服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.44.100:8848 # 注册中心地址
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.44.100:3312/shopping?serverTimezone=UTC
+    username: root
+    password: 123456
+
+
+dubbo:
+  application:
+    name: shopping_pay_service #服务名
+    serialize-check-status: DISABLE
+    check-serializable: false
+  protocol:
+    name: dubbo # 通讯协议
+    port: -1 # 端口号，-1表示自动扫描可用端口。
+  registry:
+    address: nacos://192.168.44.100:8848 # 注册中心
+
+
+# 支付配置
+alipay:
+  appId: 2021000122663020
+  privateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCuzdOHuNEHaOwSmacCwZKgiDPu4Fg8RwOJv7wIL8hwNHCyR0/6/8E6b4iWetFg2RP2oAjVxq/+Z0JvW2bDD/E3J3ADX4UAQvWerSpSJv53KTaT2M0xyQgaHWBsktjbLYtlQ/pYlkP6Zw0pX6VLSThHjuTRZyvOUOprMpbqL7ljQm4X9/F0WtiiSwycSjPz2fyzdLuGBOH9djjFAqHNisaIKteOvyy0bttSU3VVZmqwd9aMhfPnSXc0ZxEzVubC1HN9D/qEkI9ejDXRsR/30jfR/9Scv5cTvGyA6YvA43wN+nlpW0pAlcqhBnyh3zUxHjabgH8Y6J2ITcHcyz95SbjpAgMBAAECggEAG5cRFBLvqyO8XxMxcRXsdroIuGNgieMLg+pnW0Nvd4ZPY1QuI4fKj9aa0GWCNq8Mn5iSzGsXzCewLLNYfOE/SV1IKMAi1e+7pNfgHidZcqVmn99QQ9NfHAAXAAwNfkqp/cnE8caF5Dfvs+AMzt03rNO4+fQ2zdGnrlPFziDKOgg2PG67YGsDpyo1k71/XnpAu6rV/ENWay1+8wfvR7BrGf25REwpVAeyTS5zpgQ0OyFD4Sf1rkwneEHT+DoI/hJNCg5gm/cPbJQvhXMKS0PD3P5B996lfWqX3SBSAifaXrr0ABctsORlll+E7JtL+b7GBgW71xj/7sVZQ7rxBVSSIQKBgQD+eHFLUnzl2gFT/aTgKelz4MZ8gQ4mWl4jNYhy5RQWNuDSiPqgN1qpAtAhX5QKKDakWsO6XetcaL49z2AN0VHIXbqnovAngeFMzdS4WHkZ+/GjfXr715ZbIRUL62g33/D5lbeA0x6DvfpeoO3DR6lPjCdeHsCgpMij7X1tx3UL5wKBgQCv2sy96XraYDLVxl2UCXQ3gDqUYAGOVZVb1WUjocn5HjAAneMZDmCpYR2KfqLN1rho+joJd+YtsX4nSXurAdytMUQIYSPJYW3T/N4xalXFtlMeKVmomQDpyI/RisskVrDuOramlGsKCSIDLEwcDs7+TdHbKliE6bmVS6ksK0H6rwKBgQDjDL4xscEFKTYkJd21sU++d+FB97iTWfBCxCIiOelpRL/muhe9WoaG5J6mGGyzf1v5245mPCSjiEWuStjum0S4XYEM0CItbgKDj+fsL+yl1ZmuAWj5Sku6tdLclsefiy2s0/wucrD4ZUr+oeJjag5Ujr4ViaTf8Qeg1Gcky2HRIwKBgQCTeIpALL8gyJF44nvxPChgrsDxUr2bTjwNohvJ0NCef+lDayRaC8uV32I1lVMUCR/msQjgjdLSuMkRSzdRRiN4fhsOZ9/p7jF7F9CBYioBvo9feM++amjwpIeu8pS+qZCAh25KraZB6TzDqm89DFIbwsjc4VsQQyylfail6LTQ8wKBgGDhypYjEbtRaJalwANIKkNTjJ8OLBzUYtF39gNjUQTYdTk1DboSc2PbFbB6d0LnoR7kT3OgJz25tuT6cBvxCjzy7lo/inpjpGV7D/wCUxM1aDWvbU6Bw0vX8+1c467WyZxX4rWD8BKYLESfL5t4uZPOWxqE1ZRhRUPYAttUxtUS
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAolZYB8CHfAH/NJo64+SSMB/AIYwOF1VIEeP40ycRazIYVG24M6xZrkh4fox44ABy9jwU+wcVTJFnHo+kskGF5S3rPqUs0fHLypCM9SHEZZbbcl7NbzlBeKUw+FWZwxLtTTts5TnTOapeULIxez6Nq/1W5oyKNWKVFjZbN8KZtSy5/IeF4gVTGRMLuo8CM0ChjgWBP5TnZirx6Y3+8MYPLZNSHXpRiBQuIVkWXtvbWrreIndrQlxmJnvc5bCL0rh2KQhEYjThDyXzfTtgSt6HNtL4IeP3/sjuojWWy3Yem6seXTJjXfxOxxSmQz6vQ+ZkuuTADLDv+l/PDmONJUWqOwIDAQAB
+  gateway: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  notifyUrl: http://jinken.natapp1.cc
+  pcNotify: /user/payment/success/notify
