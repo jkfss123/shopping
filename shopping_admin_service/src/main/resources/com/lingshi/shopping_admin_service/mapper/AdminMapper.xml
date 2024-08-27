@@ -3,15 +3,15 @@
 <mapper namespace="com.lingshi.shopping_admin_service.mapper.AdminMapper">
 
 <!--    手动映射结果集-->
-<resultMap id="adminMapper" type="com.lingshi.common.entity.Admin">
+<resultMap id="adminMapper" type="com.lingshi.shopping_common.entity.Admin">
     <id property="aid" column="aid"/>
     <result property="username" column="username"/>
 <!--    <result property="password" column="password"/>-->
-    <collection property="roles" ofType="com.lingshi.common.entity.Role">
+    <collection property="roles" ofType="com.lingshi.shopping_common.entity.Role">
         <id property="rid" column="rid"/>
         <result property="roleName" column="roleName"/>
         <result property="roleDesc" column="roleDesc"/>
-        <collection property="permissions" ofType="com.lingshi.common.entity.Permission">
+        <collection property="permissions" ofType="com.lingshi.shopping_common.entity.Permission">
             <id property="pid" column="pid"/>
             <result property="permissionName" column="permissionName"/>
             <result property="url" column="url"/>
@@ -29,7 +29,7 @@
                           LEFT JOIN t_permission ON t_role_permission.pid=t_permission.pid
         WHERE t_admin.aid=#{aid}
     </select>
-    <select id="findAllPermission" resultType="com.lingshi.common.entity.Permission">
+    <select id="findAllPermission" resultType="com.lingshi.shopping_common.entity.Permission">
         SELECT t_admin.username,t_permission.* FROM t_admin
                                                         LEFT JOIN t_admin_role ON t_admin.aid=t_admin_role.aid
                                                         LEFT JOIN t_role ON t_role.rid = t_admin_role.rid

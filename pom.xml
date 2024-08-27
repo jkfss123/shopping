@@ -18,6 +18,21 @@
         <module>shopping_common</module>
         <module>shopping_manager_api</module>
         <module>shopping_admin_service</module>
+        <module>shopping_file_service</module>
+        <module>shopping_category_service</module>
+        <module>shopping_category_customer_api</module>
+        <module>shopping_search_service</module>
+        <module>shopping_search_customer_api</module>
+        <module>shopping_message_service</module>
+        <module>shopping_user_service</module>
+        <module>shopping_user_customer_api</module>
+        <module>shopping_cart_service</module>
+        <module>shopping_cart_customer_api</module>
+        <module>shopping_order_service</module>
+        <module>shopping_order_customer_api</module>
+        <module>shopping_pay_service</module>
+        <module>shopping_seckill_service</module>
+        <module>shopping_seckill_customer_api</module>
     </modules>
 
     <properties>
@@ -33,6 +48,7 @@
         <spring-cloud.version>2023.0.1</spring-cloud.version>
         <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
         <lombok.version>1.18.28</lombok.version>
+        <hutool.version>5.8.16</hutool.version>
     </properties>
     <!-- 依赖声明 -->
     <dependencyManagement>
@@ -66,6 +82,12 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.8.18</version>
+            </dependency>
+
             <!-- Dubbo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>

@@ -15,7 +15,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.44.135:8848 # 注册中心地址
+        server-addr: 192.168.44.100:8848 # 注册中心地址
   # 数据源
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -36,7 +36,7 @@ dubbo:
     name: dubbo # 通讯协议
     port: -1 # 端口号，-1表示自动扫描可用端口。
   registry:
-    address: nacos://192.168.44.135:8848 # 注册中心
+    address: nacos://192.168.44.100:8848 # 注册中心
 
 
 
@@ -52,3 +52,12 @@ mybatis-plus:
     # 关闭列名自动驼峰命名映射规则
     map-underscore-to-camel-case: false
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启sql日志
+
+rocketmq:
+  # nameserver地址
+  name-server: 192.168.44.134:9876
+  producer:
+    # 生产组
+    group: my_group1
+    # 发送消息超时时间
+    send-message-timeout: 3000

@@ -2,9 +2,9 @@ package com.lingshi.shopping_admin_service.service;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lingshi.common.entity.Role;
-import com.lingshi.common.entity.RolePermission;
-import com.lingshi.common.service.IRoleService;
+import com.lingshi.shopping_common.entity.Role;
+import com.lingshi.shopping_common.entity.RolePermission;
+import com.lingshi.shopping_common.service.IRoleService;
 import com.lingshi.shopping_admin_service.mapper.RoleMapper;
 import com.lingshi.shopping_admin_service.mapper.RolePermissionMapper;
 import org.apache.dubbo.config.annotation.DubboService;

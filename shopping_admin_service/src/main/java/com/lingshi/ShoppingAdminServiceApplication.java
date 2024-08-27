@@ -13,6 +13,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient//注册得到注册中心注解
+
 @EnableDubbo//注册dubbo服务注解
 @SpringBootApplication
 @MapperScan("com.lingshi.shopping_admin_service.mapper")

@@ -1,1 +1,2 @@
-com.lingshi.common.exception.GlobalExceptionHandler
+com.lingshi.shopping_common.exception.GlobalExceptionHandler
+com.lingshi.shopping_common.exception.GlobalExceptionHandler
