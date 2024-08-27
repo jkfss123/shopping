@@ -2,17 +2,16 @@ package com.lingshi.shopping_manager_api.service.impl;
 
 import cn.dev33.satoken.secure.SaSecureUtil;
 import cn.dev33.satoken.stp.StpUtil;
-import com.lingshi.common.entity.Admin;
-import com.lingshi.common.result.BaseResult;
-import com.lingshi.common.service.IAdminService;
+import com.lingshi.shopping_common.entity.Admin;
+import com.lingshi.shopping_common.service.result.BaseResult;
+import com.lingshi.shopping_common.service.IAdminService;
 import com.lingshi.shopping_manager_api.service.ILoginService;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
-import static com.lingshi.common.exception.BusCodeEnum.LOGIN_ERROR;
+import static com.lingshi.shopping_common.exception.BusCodeEnum.LOGIN_ERROR;
 
 @Service
 public class LoginServiceImpl implements ILoginService {

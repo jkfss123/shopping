@@ -1,11 +1,10 @@
 package com.lingshi.shopping_manager_api.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lingshi.common.entity.Role;
-import com.lingshi.common.result.BaseResult;
-import com.lingshi.common.service.IRoleService;
+import com.lingshi.shopping_common.entity.Role;
+import com.lingshi.shopping_common.service.result.BaseResult;
+import com.lingshi.shopping_common.service.IRoleService;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -2,7 +2,7 @@ package com.lingshi.shopping_goods_service.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lingshi.common.entity.Brand;
+import com.lingshi.shopping_common.entity.Brand;
 
 /**
  * <p>

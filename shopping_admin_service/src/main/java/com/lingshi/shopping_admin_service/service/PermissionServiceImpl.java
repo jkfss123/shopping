@@ -2,11 +2,11 @@ package com.lingshi.shopping_admin_service.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lingshi.common.entity.Permission;
-import com.lingshi.common.entity.RolePermission;
-import com.lingshi.common.exception.BusCodeEnum;
-import com.lingshi.common.exception.BusException;
-import com.lingshi.common.service.IPermissionService;
+import com.lingshi.shopping_common.entity.Permission;
+import com.lingshi.shopping_common.entity.RolePermission;
+import com.lingshi.shopping_common.exception.BusCodeEnum;
+import com.lingshi.shopping_common.exception.BusException;
+import com.lingshi.shopping_common.service.IPermissionService;
 import com.lingshi.shopping_admin_service.mapper.PermissionMapper;
 import com.lingshi.shopping_admin_service.mapper.RolePermissionMapper;
 import org.apache.dubbo.config.annotation.DubboService;

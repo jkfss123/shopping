@@ -3,20 +3,18 @@ package com.lingshi.shopping_admin_service.service;
 import cn.dev33.satoken.secure.SaSecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lingshi.common.entity.Admin;
-import com.lingshi.common.entity.AdminRole;
-import com.lingshi.common.entity.Permission;
-import com.lingshi.common.result.BaseResult;
-import com.lingshi.common.service.IAdminService;
+import com.lingshi.shopping_common.entity.Admin;
+import com.lingshi.shopping_common.entity.AdminRole;
+import com.lingshi.shopping_common.entity.Permission;
+import com.lingshi.shopping_common.service.IAdminService;
 import com.lingshi.shopping_admin_service.mapper.AdminMapper;
 import com.lingshi.shopping_admin_service.mapper.AdminRoleMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @DubboService
@@ -99,7 +97,7 @@ public class AdminServiceImpl implements IAdminService {
     @Override
     public List<Permission> findAllPermission(String username) {
         List<Permission> permissions = adminMapper.findAllPermission(username);
-        return null;
+        return permissions != null ? permissions : new ArrayList<>();
     }
 
     public static void main(String[] args) {
